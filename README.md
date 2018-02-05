@@ -1,30 +1,21 @@
-<a href="https://critcola.com/?utm_source=github.com&utm_medium=readme&utm_term=logo&utm_content=discord-auto-grouping&utm_campaign=development">![Logo](https://critcola.com/assets/images/crit-cola-banner.svg)</a>
-
 # Discord Auto-grouping
+
+## Original by CritCola
 
 Discord Auto-grouping is a Discord bot that uses discord.js to automatically group users into "subchannels" in Discord servers, eliminating the need for creating numerous group channels. It was developed out of necessity for Crit Cola to mitigate two major pitfalls with Discord: their lack of subchannels and temporary channels.
 
 When a user enters a channel prefixed with a game controller emoji (🎮), they'll be automatically grouped into their own "subchannel" where they can be joined by the rest of their group. When the group channel empties, it will be immediately deleted.
 
-Crit Cola is perhaps the first community on Discord to achieve auto-grouping, and we're open-sourcing the code so that other large gaming communities can benefit from it.
+## Fork by Cludch
 
-## Demo
+I removed some unneeded code and added a few things. First of all, the newly created channel requires a specific group (`NewBees`) in order to be joined, hence our Discord
+is used privately only.
 
-See it in action and test it out for yourself in [Crit Cola's Discord](https://discord.critcola.com).
+The newly created channels will be added to the `Gaming` category, whose ID is being determined upon start. I modified the channel names a little, but nothing special.
+
+Last worth mentioning: This is just a quick and dirty hack. Still a few hard-coded things, but it does its job, even though we don't really need that.. Now we do!
 
 ## Installation
 
-Install [discord.js](https://github.com/hydrabolt/discord.js), ignoring dependency warnings, then run `node discord-auto-grouping.js` after setting your token in `client.login()`.
-
-```sh
-npm install discord.js --save
-npm install uws --save
-```
-
-## About Crit Cola
-
-Crit Cola is connecting and empowering the world's best players. Primarily an [Overwatch clan](https://critcola.com/?utm_source=github.com&utm_medium=readme&utm_term=overwatch-clan&utm_content=discourse-browser-share&utm_campaign=development), we're a growing community of PC gamers. Join our [Steam group](http://steamcommunity.com/groups/critcola) and follow us on [Twitter](https://twitter.com/CritColaGaming). Cheers!
-
-## License
-
-Discourse Auto-grouping is released under the [MIT License](LICENSE).
+Run `npm i` or `yarn` to install the dependencies. Then copy the `config.example.js` to `config.js` and change the values.
+Finally, start the bot using `npm start` or `yarn start`. For persistence, I can recommend [PM2](https://github.com/Unitech/pm2).

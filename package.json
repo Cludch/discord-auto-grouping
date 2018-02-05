@@ -1,0 +1,10 @@
+{
+  "name": "discord-auto-grouping",
+  "version": "1.0.0",
+  "main": "discord-auto-grouping.js",
+  "author": "Jannis Lehmann <cludch@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.3.0"
+  }
+}
