@@ -42,6 +42,12 @@ client.on('ready', () => {
 	}
 });
 
+// On timeout - exit and restart
+client.on('error', (err) => {
+	console.error(err);
+	process.exit(1);
+});
+
 // Trigger on VOICE_STATE_UPDATE events.
 client.on('voiceStateUpdate', (oldMember, member) => {
 
