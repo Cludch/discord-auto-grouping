@@ -44,10 +44,17 @@ client.on('ready', () => {
 		} 
 	}
 
-	// Delete all old channels, which sit under the gaming category and start with the emoji in case there are permanent channel.
+	// Delete all old channels with no members,
+	// which sit under the gaming category and start with the emoji in case there are permanent channel.
 	for (const channelId of client.channels.keys()) {
 		const channel = client.channels.get(channelId);
-		if (channel.parentID === gamesCategoryId && channel.name.startsWith(channelStart)) channel.delete();
+		if (channel.type !== 'voice') continue;
+
+		if (channel.parentID === gamesCategoryId
+			&& channel.name.startsWith(channelStart)
+			&& channel.members.size === 0) {
+				channel.delete().then(() => console.log('Deleted voice channel ' + channel.name));
+			}
 	}
 });
 
