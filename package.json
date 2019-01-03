@@ -1,6 +1,6 @@
 {
   "name": "discord-auto-grouping",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "discord-auto-grouping.js",
   "author": "Jannis Lehmann <cludch@gmail.com>",
   "license": "MIT",
